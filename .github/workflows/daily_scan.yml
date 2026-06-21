@@ -1,32 +1,31 @@
 name: Daily Stock Scanner
 
 on:
-workflow_dispatch:
+  workflow_dispatch:
 
-schedule:
-- cron: '0 12 * * 1-5'
+  schedule:
+    - cron: '0 12 * * 1-5'
 
 jobs:
+  scanner:
+    runs-on: ubuntu-latest
 
-scanner:
+    steps:
+      - uses: actions/checkout@v4
 
-runs-on: ubuntu-latest
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
-steps:
+      - name: Install packages
+        run: |
+          pip install -r requirements.txt
 
-  - uses: actions/checkout@v4
-
-  - uses: actions/setup-python@v5
-    with:
-      python-version: "3.11"
-
-  - run: pip install -r requirements.txt
-
-  - name: Run Scanner
-    env:
-      LINE_TOKEN: ${{ secrets.LINE_TOKEN }}
-      LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
-    run: |
-      python scanner.py
-      python portfolio_scanner.py
-      python alert_engine.py
+      - name: Run Scanner
+        env:
+          LINE_TOKEN: ${{ secrets.LINE_TOKEN }}
+          LINE_USER_ID: ${{ secrets.LINE_USER_ID }}
+        run: |
+          python scanner.py
+          python portfolio_scanner.py
+          python alert_engine.py
