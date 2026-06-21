@@ -3,8 +3,8 @@ import os
 import requests
 
 FILE = "portfolio_history.csv"
-CHANNEL_ACCESS_TOKEN = os.getenv("ez4FG3Ob8CF/4qMfjlkNWpW30kiMcOM3OwAIK3bt93+Xd0Hd9K6XEy6uBy9QB3YEjh6k9Zh+cCB7ueKCIOeVFMSJqNsgI/SYEgFI98rp7E/IJMvME2XmAB4Fi/GufiDOcK7sbBggHo3v8ExWo4P79wdB04t89/1O/w1cDnyilFU=")
-USER_ID = os.getenv("U3ab25f9f85b39d7c610a48264ec2f7bc")
+CHANNEL_ACCESS_TOKEN = os.getenv("LINE_TOKEN")
+USER_ID = os.getenv("LINE_USER_ID")
 
 if not os.path.exists(FILE):
     print("ไม่พบ portfolio_history.csv")
@@ -27,11 +27,14 @@ def send_line(message):
         ]
     }
 
-    requests.post(
-        "https://api.line.me/v2/bot/message/push",
-        headers=headers,
-        json=payload
-    )
+response = requests.post(
+    "https://api.line.me/v2/bot/message/push",
+    headers=headers,
+    json=payload
+)
+
+print("LINE STATUS =", response.status_code)
+print(response.text)
 
 data = {}
 
