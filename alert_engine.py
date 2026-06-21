@@ -31,14 +31,14 @@ def send_line(message):
         ]
     }
 
-response = requests.post(
-    "https://api.line.me/v2/bot/message/push",
-    headers=headers,
-    json=payload
-)
+    response = requests.post(
+        "https://api.line.me/v2/bot/message/push",
+        headers=headers,
+        json=payload
+    )
 
-print("LINE STATUS =", response.status_code)
-print(response.text)
+    print("LINE STATUS =", response.status_code)
+    print(response.text)
 
 data = {}
 
