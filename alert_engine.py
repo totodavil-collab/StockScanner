@@ -3,8 +3,8 @@ import os
 import requests
 
 FILE = "portfolio_history.csv"
-CHANNEL_ACCESS_TOKEN = "ez4FG3Ob8CF/4qMfjlkNWpW30kiMcOM3OwAIK3bt93+Xd0Hd9K6XEy6uBy9QB3YEjh6k9Zh+cCB7ueKCIOeVFMSJqNsgI/SYEgFI98rp7E/IJMvME2XmAB4Fi/GufiDOcK7sbBggHo3v8ExWo4P79wdB04t89/1O/w1cDnyilFU="
-USER_ID = "U3ab25f9f85b39d7c610a48264ec2f7bc"
+CHANNEL_ACCESS_TOKEN = os.getenv("ez4FG3Ob8CF/4qMfjlkNWpW30kiMcOM3OwAIK3bt93+Xd0Hd9K6XEy6uBy9QB3YEjh6k9Zh+cCB7ueKCIOeVFMSJqNsgI/SYEgFI98rp7E/IJMvME2XmAB4Fi/GufiDOcK7sbBggHo3v8ExWo4P79wdB04t89/1O/w1cDnyilFU=")
+USER_ID = os.getenv("U3ab25f9f85b39d7c610a48264ec2f7bc")
 
 if not os.path.exists(FILE):
     print("ไม่พบ portfolio_history.csv")
