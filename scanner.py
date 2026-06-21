@@ -92,16 +92,20 @@ hot_stocks.sort(
     key=lambda x: x["score"],
     reverse=True
 )
-
+top_message = "🚀 DAILY STOCK SCANNER\n\n"
+top_message += "🔥 TOP PICKS\n\n"
 print("\n🔥 หุ้นซิ่งคืนนี้\n")
-
 for stock in hot_stocks[:5]:
 
-    print(
-        f"{stock['symbol']:6} "
+    line = (
+        f"{stock['symbol']} "
         f"Score {stock['score']:.0f} "
         f"({stock['pct']:.2f}%)"
     )
+
+    print(line)
+
+    top_message += line + "\n"
 
 history_dir = os.path.join(BASE_DIR, "history")
 os.makedirs(history_dir, exist_ok=True)
@@ -135,5 +139,8 @@ with open(
             round(stock["score"], 0),
             round(stock["pct"], 2)
         ])
-
 print(f"\n💾 Saved: {filename}")
+with open("daily_scan.txt", "w", encoding="utf-8") as f:
+    f.write(top_message)
+
+print("💾 Saved daily_scan.txt")

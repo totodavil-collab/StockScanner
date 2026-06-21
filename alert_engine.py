@@ -71,7 +71,11 @@ for symbol, history in data.items():
         print(msg)
 
         send_line(msg)
+scan_text = ""
 
+if os.path.exists("daily_scan.txt"):
+    with open("daily_scan.txt", encoding="utf-8") as f:
+        scan_text = f.read()
 summary = "\n📈 DAILY PORTFOLIO\n\n"
 
 for symbol, history in data.items():
@@ -83,6 +87,6 @@ for symbol, history in data.items():
         f"{latest['Signal']}\n"
     )
 
-send_line(summary)
+final_message = scan_text + "\n\n" + summary
 
-summary = "📈 DAILY PORTFOLIO\n\n"
+send_line(final_message)
