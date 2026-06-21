@@ -7,8 +7,6 @@ FILE = "portfolio_history.csv"
 CHANNEL_ACCESS_TOKEN = os.getenv("LINE_TOKEN")
 USER_ID = os.getenv("LINE_USER_ID")
 
-print("TOKEN =", CHANNEL_ACCESS_TOKEN is not None)
-print("USER_ID =", USER_ID is not None)
 
 if not os.path.exists(FILE):
     print("ไม่พบ portfolio_history.csv")
@@ -36,9 +34,6 @@ def send_line(message):
         headers=headers,
         json=payload
     )
-
-    print("LINE STATUS =", response.status_code)
-    print(response.text)
 
 data = {}
 
