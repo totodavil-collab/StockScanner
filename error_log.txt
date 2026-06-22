@@ -13,3 +13,37 @@ Traceback (most recent call last):
     ) as file:
     ^
 OSError: [Errno 30] Read-only file system: 'portfolio_history.csv'
+Traceback (most recent call last):
+  File "/Users/totodavil/StockScanner/scanner.py", line 143, in <module>
+    with open("daily_scan.txt", "w", encoding="utf-8") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 30] Read-only file system: 'daily_scan.txt'
+Traceback (most recent call last):
+  File "/Users/totodavil/StockScanner/portfolio_scanner.py", line 86, in <module>
+    with open(
+         ~~~~^
+        "portfolio_history.csv",
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        encoding="utf-8"
+        ^^^^^^^^^^^^^^^^
+    ) as file:
+    ^
+OSError: [Errno 30] Read-only file system: 'portfolio_history.csv'
+Traceback (most recent call last):
+  File "/Users/totodavil/StockScanner/scanner.py", line 143, in <module>
+    with open("daily_scan.txt", "w", encoding="utf-8") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 30] Read-only file system: 'daily_scan.txt'
+Traceback (most recent call last):
+  File "/Users/totodavil/StockScanner/portfolio_scanner.py", line 86, in <module>
+    with open(
+         ~~~~^
+        "portfolio_history.csv",
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        encoding="utf-8"
+        ^^^^^^^^^^^^^^^^
+    ) as file:
+    ^
+OSError: [Errno 30] Read-only file system: 'portfolio_history.csv'

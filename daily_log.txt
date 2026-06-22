@@ -78,3 +78,133 @@ PORTFOLIO SCANNER
 ALERT ENGINE
 ========================
 
+
+🔥 AI STOCK SCANNER V5
+
+
+=== AI ===
+MU     Score    93 (8.70%)
+TSM    Score    90 (6.94%)
+ARM    Score    87 (4.91%)
+
+=== SPACE ===
+
+=== NUCLEAR ===
+NNE    Score   100 (11.46%)
+LEU    Score   100 (12.38%)
+
+=== QUANTUM ===
+
+=== DATACENTER ===
+VRT    Score    62 (4.87%)
+DLR    Score    39 (0.57%)
+EQIX   Score    30 (0.34%)
+
+=== COPPER ===
+SCCO   Score    30 (0.65%)
+
+=== CYBERSECURITY ===
+FTNT   Score    52 (0.41%)
+PANW   Score    48 (2.00%)
+
+=== SOFTWARE ===
+
+=== ROBOTICS ===
+
+🔥 หุ้นซิ่งคืนนี้
+
+NNE Score 100 (11.46%)
+LEU Score 100 (12.38%)
+MU Score 93 (8.70%)
+TSM Score 90 (6.94%)
+ARM Score 87 (4.91%)
+
+💾 Saved: /Users/totodavil/StockScanner/history/2026-06-21.csv
+
+🔥 MY PORTFOLIO SCORE
+
+QQQM   40% Score 100 STRONG BUY
+SMH    30% Score 100 STRONG BUY
+RKLB   15% Score  60 HOLD
+URA    15% Score   0 WAIT
+ไม่พบ portfolio_history.csv
+
+========================
+STOCK SCANNER
+========================
+
+
+========================
+PORTFOLIO SCANNER
+========================
+
+
+========================
+ALERT ENGINE
+========================
+
+
+🔥 AI STOCK SCANNER V5
+
+
+=== AI ===
+MU     Score    93 (8.70%)
+TSM    Score    90 (6.94%)
+ARM    Score    87 (4.91%)
+
+=== SPACE ===
+
+=== NUCLEAR ===
+NNE    Score   100 (11.46%)
+LEU    Score   100 (12.38%)
+
+=== QUANTUM ===
+
+=== DATACENTER ===
+VRT    Score    62 (4.87%)
+DLR    Score    39 (0.57%)
+EQIX   Score    30 (0.34%)
+
+=== COPPER ===
+SCCO   Score    30 (0.65%)
+
+=== CYBERSECURITY ===
+FTNT   Score    52 (0.41%)
+PANW   Score    48 (2.00%)
+
+=== SOFTWARE ===
+
+=== ROBOTICS ===
+
+🔥 หุ้นซิ่งคืนนี้
+
+NNE Score 100 (11.46%)
+LEU Score 100 (12.38%)
+MU Score 93 (8.70%)
+TSM Score 90 (6.94%)
+ARM Score 87 (4.91%)
+
+💾 Saved: /Users/totodavil/StockScanner/history/2026-06-22.csv
+
+🔥 MY PORTFOLIO SCORE
+
+QQQM   40% Score 100 STRONG BUY
+SMH    30% Score 100 STRONG BUY
+RKLB   15% Score  60 HOLD
+URA    15% Score   0 WAIT
+ไม่พบ portfolio_history.csv
+
+========================
+STOCK SCANNER
+========================
+
+
+========================
+PORTFOLIO SCANNER
+========================
+
+
+========================
+ALERT ENGINE
+========================
+

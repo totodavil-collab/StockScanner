@@ -4,13 +4,13 @@ import requests
 
 FILE = "portfolio_history.csv"
 
-CHANNEL_ACCESS_TOKEN = os.getenv("LINE_TOKEN")
-USER_ID = os.getenv("LINE_USER_ID")
-
+CHANNEL_ACCESS_TOKEN = "ez4FG3Ob8CF/4qMfjlkNWpW30kiMcOM3OwAIK3bt93+Xd0Hd9K6XEy6uBy9QB3YEjh6k9Zh+cCB7ueKCIOeVFMSJqNsgI/SYEgFI98rp7E/IJMvME2XmAB4Fi/GufiDOcK7sbBggHo3v8ExWo4P79wdB04t89/1O/w1cDnyilFU="
+USER_ID = "U3ab25f9f85b39d7c610a48264ec2f7bc"
 
 if not os.path.exists(FILE):
     print("ไม่พบ portfolio_history.csv")
     exit()
+
 
 def send_line(message):
 
@@ -35,6 +35,9 @@ def send_line(message):
         json=payload
     )
 
+    print("LINE STATUS =", response.status_code)
+
+
 data = {}
 
 with open(FILE, encoding="utf-8") as f:
@@ -51,7 +54,8 @@ with open(FILE, encoding="utf-8") as f:
         data[symbol].append(row)
 
 print("\n🚨 SIGNAL CHANGE CHECK\n")
-send_line("🚀 STOCK SCANNER TEST")
+
+alerts = []
 
 for symbol, history in data.items():
 
@@ -60,23 +64,34 @@ for symbol, history in data.items():
 
     previous = history[-2]["Signal"]
     current = history[-1]["Signal"]
+
     if previous != current:
 
-        msg = (
-            f"🚨 STOCK ALERT\n\n"
-            f"{symbol}\n"
-            f"{previous} → {current}"
+        alerts.append(
+            f"{symbol}\n{previous} → {current}"
         )
 
-        print(msg)
+if alerts:
 
-        send_line(msg)
+    alert_text = "🚨 SIGNAL CHANGE\n\n"
+    alert_text += "\n\n".join(alerts)
+
+    print(alert_text)
+
+    send_line(alert_text)
+
 scan_text = ""
 
 if os.path.exists("daily_scan.txt"):
-    with open("daily_scan.txt", encoding="utf-8") as f:
+
+    with open(
+        "daily_scan.txt",
+        encoding="utf-8"
+    ) as f:
+
         scan_text = f.read()
-summary = "\n📈 DAILY PORTFOLIO\n\n"
+
+summary = "📈 DAILY PORTFOLIO\n\n"
 
 for symbol, history in data.items():
 
@@ -87,6 +102,10 @@ for symbol, history in data.items():
         f"{latest['Signal']}\n"
     )
 
-final_message = scan_text + "\n\n" + summary
+final_message = (
+    scan_text
+    + "\n\n"
+    + summary
+)
 
 send_line(final_message)
