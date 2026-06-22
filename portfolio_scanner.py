@@ -109,3 +109,37 @@ with open(
             item["score"],
             item["signal"]
         ])
+# =========================
+# CREATE DAILY_SCAN.TXT
+# =========================
+
+top_picks = []
+
+for item in results:
+
+    if item["score"] >= 80:
+
+        top_picks.append(
+            f"{item['symbol']} Score {item['score']}"
+        )
+
+with open(
+    "daily_scan.txt",
+    "w",
+    encoding="utf-8"
+) as f:
+
+    f.write("🚀 DAILY STOCK SCANNER\n\n")
+    f.write("🔥 TOP PICKS\n\n")
+
+    if len(top_picks) == 0:
+
+        f.write("No Strong Setup Today\n")
+
+    else:
+
+        for stock in top_picks:
+
+            f.write(stock + "\n")
+
+print("\n✅ daily_scan.txt created")
